@@ -153,6 +153,8 @@ def main():
     plt.show()
 
 
+
+
     # Get metrics for Random Forest with threshold = 0.82
     print('Random Forest with 0.82 Threshold --------------------------------------------------')
     y_pred_thresh = (rf_classifier.predict_proba(X_test)[:,1] >= 0.82).astype(bool)
@@ -207,6 +209,7 @@ def main():
     # plot loss over time
     plt.plot(history.history['loss'])
     plt.show()
+    ##
 
     ####################################################################################
 
