@@ -1,8 +1,4 @@
 '''
-Authors: Indu Priyanka Krovvidi, Michael Abbate, Nick Renaud
-Professor Xu
-CS733 Final Project - Predicting MLB At-Bat Outcomes
-
 mlb_final.py includes a Decision Tree, XGBoost Classifier, Random Forest, Voting Classifier, and Neural Network
     to predict at-bat outcomes.
 '''
@@ -36,6 +32,7 @@ def evaluate(y_test, y_pred):
     print(report)
 
 def main():
+    # Get start time of the process
     start_time = datetime.now()
     current_time = start_time.strftime("%H:%M:%S")
     print("Time start:", current_time)
@@ -118,6 +115,7 @@ def main():
                                 columns = ['importance']).sort_values('importance',ascending=False)
         print(imp)
         print()
+
         # Get ROC Values
         fpr, tpr, _ = roc_curve(y_test,  yproba)
         auc = roc_auc_score(y_test, yproba)
@@ -151,7 +149,6 @@ def main():
     plt.legend(prop={'size': 13}, loc='lower right')
 
     plt.show()
-
 
 
 
@@ -209,7 +206,7 @@ def main():
     # plot loss over time
     plt.plot(history.history['loss'])
     plt.show()
-    ##
+
 
     ####################################################################################
 
