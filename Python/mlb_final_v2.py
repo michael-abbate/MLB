@@ -3,6 +3,9 @@ mlb_final.py includes a Decision Tree, XGBoost Classifier, Random Forest, Voting
     to predict at-bat outcomes.
 '''
 
+import os
+os.chdir('/Users/mabbate/Desktop/Python_Projects/CS733/Final_Project')
+
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -140,7 +143,7 @@ def main():
     plt.plot([0, 1], [0, 1], color='orange', linestyle='--')
 
     plt.xticks(np.arange(0.0, 1.1, step=0.1))
-    plt.xlabel("Flase Positive Rate", fontsize=15)
+    plt.xlabel("False Positive Rate", fontsize=15)
 
     plt.yticks(np.arange(0.0, 1.1, step=0.1))
     plt.ylabel("True Positive Rate", fontsize=15)
